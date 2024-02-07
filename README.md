@@ -1,39 +1,162 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Brick Connect**
 
-Welcome,
+<hr>
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## **API Overview**
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+The creation of Brick Connect API arose from a genuine aspiration to unite the LEGO community within a secure and welcoming environment. Its primary aim is to provide users with a dedicated platform to showcase their distinctive LEGO creations, fostering a spirit of collaboration and creativity among enthusiasts. By seamlessly integrating with the front-end ReactJS, the API ensures smooth functionality, enhancing the user experience. Through Brick Connect, users can explore a vast amount of LEGO builds shared by others, follow their LEGO adventures, and actively engage in creating, updating, and deleting their own posts, thereby cultivating an interactive and dynamic community space centered around a shared passion for LEGO craftsmanship.
 
-## Codeanywhere Reminders
+<hr>
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## Table of contents:
+1. [**Site Overview**](#site-overview)
+1. [**Planning stage**](#planning-stage)
+    * [**Strategy**](#strategy)
+      * [***Site Aims***](#site-aims)
+      * [***Target Audiences***](#target-audiences)
+      * [***User Stories***](#user-stories)
+    * [***Wireframes***](#wireframes)
+    * [***Database Schema***](#database-schema)
+    * [***Colour Scheme***](#color-scheme)
+    * [***Typography***](#typography)
+1. [**Agile Development**](#agile-development)
+1. [**Features**](#features)
+    * [***Admin Page***](#admin-page)
+    * [***Posts***](#posts)
+    * [***Comments***](#comments)
+    * [***Likes and favourites***](#likes-and-favourites)
+    * [***Followers***](#followers)
+    * [***Defensive Design***](#defensive-design)
+    * [***User Authentication***](#user-authentication)
+    * [***404 Page***](#404-page)
+1. [**Future-Enhancements**](#future-enhancements)
+1. [**Testing Phase**](#testing-phase)
+1. [**Deployment**](#deployment)
+1. [**Software and Tech**](#software-and-tech)
+1. [**Media**](#media)
+1. [**Credits**](#credits)
+1. [**Honourable mentions**](#honorable-mentions)
 
-`python3 -m http.server`
+<hr>
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## **Planning Stage**
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+### **API Aims:**
 
-`http_server`
+* Provide the back-end component to a front-end site developed with React.js.
+* To assist the user in registering, logging in and logging out on the front-end.
+* To provide front-end users with CRUD (create, read, update and delete) functionality for posts found on the site.
+* To allow users on the front-end to create, edit and delete their own comments and delete their own.
+* To give users the ability to follow and unfollow fellow users of the site.
+* To allow for greater community interaction by giving users the opportunity to like or remove the like from posts.
+* Provide filtered content for the front-end user based on whether they follow a user or have liked or favourited a particular post.
+* Enhance the user experience integrated search function for those trying to find a specific user or post.
+* Offer users the opportunity to provide more information about themselves by adding to their user profile. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<hr>
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### **User Stories:**
 
-To log into the Heroku toolbelt CLI:
+### User stories specific to this API are listed below:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### **Site User**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+As a **Registered** user I can: 
 
----
+As an **Unregistered** User I can:
 
-Happy coding!
+#### **Site Admin**
+As a **Site Admin** I can: 
+
+<hr>
+
+### **Wireframes**
+
+<hr>
+
+### **Database Schema**
+
+<hr>
+
+
+## Agile Development
+
+<br>
+<hr>
+<br>
+
+# **Features**
+
+## **API Navigation**
+
+
+### **Admin Page**
+
+<hr>
+
+### **Posts**
+
+<hr>
+
+### **Tutorials**
+
+<hr>
+
+### **Comments**
+
+### **Likes and favourites**
+
+<hr>
+
+### **Followers**
+
+<hr>
+
+### **Pagination**
+
+<hr>
+
+## **Defensive Design**
+### **Permissions**
+
+<hr>
+
+### User Authentication
+
+<hr>
+
+### **404 Page**
+
+<hr>
+
+## **Future-Enhancements**
+
+<hr>
+
+
+## **Testing Phase**
+
+<hr>
+
+## **Deployment**
+
+<hr>
+
+## **Software and Tech**
+
+### Languages
+
+### Frameworks, Libraries and Programs
+
+<hr>
+
+## **Credits**
+
+<hr>
+
+## Media
+
+<hr>
+
+## **Honourable mentions**
