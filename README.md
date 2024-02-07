@@ -62,12 +62,20 @@ The creation of Brick Connect API arose from a genuine aspiration to unite the L
 
 #### **Site User**
 
-As a **Registered** user I can: 
+As a **Registered** user I can:
+* I can **update my username and password** so that **update my display name and keep my profile secure**
+* I can **edit my profile** so that **I can update my information**
+* I can **like a comment** so that **I can express myself without having to make a comment**
+* I can **edit the comment** so that **I can fix or update the comment**
+* I can **create a comment on a post** so that **I can share my thoughts about the post**
+* I can **edit my post title, description and change the image** so that **my post can be corrected or updated after it was posted**
+* I can **like or remove my like from a post** so that **I can express my liking of the post or remove the like if I choose to do so**
+* I can **create posts** so that **I can share my images with the rest of the community**
+* I can **sign in to the site** so that **I can gain full access to the site**
+* I can **log out of my profile** so that **I can keep my profile secure**
 
 As an **Unregistered** User I can:
-
-#### **Site Admin**
-As a **Site Admin** I can: 
+* I can **create a new account** so that **I can access the full sights features** 
 
 <hr>
 
