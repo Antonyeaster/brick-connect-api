@@ -62,7 +62,7 @@ The creation of Brick Connect API arose from a genuine aspiration to unite the L
 
 #### **Site User**
 
-As a **Registered** user I can:
+As a **Registered** User I can:
 * I can **update my username and password** so that **update my display name and keep my profile secure**
 * I can **edit my profile** so that **I can update my information**
 * I can **like a comment** so that **I can express myself without having to make a comment**
