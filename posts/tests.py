@@ -43,3 +43,48 @@ class PostListViewTests(APITestCase):
         """
         response = self.client.post('/posts/', {'title': 'a title'})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+
+class PostDetailViewTests(APITestCase):
+    """ Set up used to create 2 users and posts to use within the class tests"""
+    def setUp(self):
+        antony = User.objects.create_user(username='antony', password='pass')
+        freddie = User.objects.create_user(username='freddie', password='pass')
+        Post.objects.create(
+            owner=antony, title='a title', description='antonys description'
+        )
+        Post.objects.create(
+            owner=freddie, title='another title', description='freddies description'
+        )
+
+    def test_can_retrieve_post_using_valid_id(self):
+        """For retrieving a post with a valid id"""
+        response = self.client.get('/posts/1/')
+        self.assertEqual(response.data['title'], 'a title')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_cant_retrieve_post_using_invalid_id(self):
+        """Can't retrieve a post with a invalid id"""
+        response = self.client.get('/posts/999/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_user_can_update_own_post(self):
+        """ 
+        Login as one of the set up users and retreive a post, update the title 
+        filters through the primary keys and gets the first one, adds the new title
+        """
+        self.client.login(username='antony', password='pass')
+        response = self.client.put('/posts/1/', {'title': 'a new title'})
+        post = Post.objects.filter(pk=1).first()
+        self.assertEqual(post.title, 'a new title')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_user_cant_update_other_users_post(self):
+        """ 
+        Login with one of the set up users,
+        attempt to update the title with the other users post id
+        """
+        self.client.login(username='antony', password='pass')
+        response = self.client.put('/posts/2/', {'title': 'a new title'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
