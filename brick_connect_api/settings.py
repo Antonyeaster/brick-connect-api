@@ -64,7 +64,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
-   'localhost',
+   '8000-antonyeaste-brickconnec-ks640087d6p.ws-eu108.gitpod.io',
 ]
 
 
@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
     'dj_rest_auth',
     'django.contrib.sites',
     'allauth',
