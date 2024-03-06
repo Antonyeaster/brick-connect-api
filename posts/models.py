@@ -2,6 +2,11 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+class Categories(models.TextChoices):
+    """Categories available to the user when posting"""
+    FULL_SET_BUILDS = 'full set builds'
+    DIY_BUILDS = 'diy builds'
+
 class Post(models.Model):
     """
     Post model is related to the 'owner', owner is a user instance.
@@ -27,11 +32,13 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    category = models.CharField(max_length=100)
+    category = models.CharField(
+        max_length=100, choices=Categories.choices, default=Categories.FULL_SET_BUILDS)
     image = models.ImageField(
         upload_to='images/', default='../default-post-edited_1_b3dicv_e_improve_e_sharpen_v6swmv', blank=True
     )
-    image_filter = models.CharField(max_length=32, choices=image_filter_choices, default='normal')
+    image_filter = models.CharField(
+        max_length=32, choices=image_filter_choices, default='normal')
 
     class Meta:
         ordering = ['-created_at']
