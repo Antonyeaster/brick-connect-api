@@ -15,7 +15,7 @@ class CommentLike(models.Model):
     same comment twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, related_name='likes', on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment, related_name='commentlike', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
