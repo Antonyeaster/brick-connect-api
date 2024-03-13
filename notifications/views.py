@@ -12,7 +12,7 @@ class NotificationsList(generics.ListAPIView):
     ordering_fields = ["read", "created_at"]
 
     def get_queryset(self):
-        return Notifications.objects.filter(recipient=self.request.user, read=False)
+        return Notifications.objects.filter(recipient=self.request.user)
 
 
 class NotificationsDetail(generics.RetrieveUpdateAPIView):
