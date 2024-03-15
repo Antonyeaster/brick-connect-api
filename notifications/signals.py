@@ -10,25 +10,33 @@ def create_notification(**kwargs):
         recipient=kwargs["recipient"],
         sender=kwargs["sender"],
         category=kwargs["category"],
-        text=kwargs["content"],
+        object_id=kwargs["object_id"],
+        text=kwargs["text"],
     )
 
-@receiver(post_save, sender=Follow)
+@receiver(post_save, sender=Follower)
 def create_follow_notification(sender, instance, created, **kwargs):
     if created:
-        Notifications.objects.create(
-            recipient=instance.followed_user,
-            sender=instance.follower,
-            text=f"{instance.follower.username} started following you.",
-            category=Notifications.FOLLOW
-        )
+        data = {
+            "recipient": instance.followed,
+            "sender": instance.owner,
+            "category": "follow",
+            "object_id": instance.id,
+            "text": f"{instance.recipient.username} started following you.",
+        }
+
+        create_notification(**data)
 
 @receiver(post_save, sender=Comment)
 def create_comment_notification(sender, instance, created, **kwargs):
     if created:
-        Notifications.objects.create(
-            recipient=instance.post.author,
-            sender=instance.author,
-            text=f"{instance.author.username} commented on your post: {instance.text}",
-            category=Notifications.COMMENT
-        )
+        data = {
+            "recipient": instance.post.owner,
+            "sender": instance.owner,
+            "category": "comment",
+            "object_id": instance.post.id,
+            "text": f"{instance.recipient.username} commented on your post "
+            f"{instance.post.title}",
+        }
+
+        create_notification(**data)
