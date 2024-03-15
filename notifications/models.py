@@ -1,25 +1,29 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth.models import User
 
-
+    
 class Notifications(models.Model):
 
-    CATEGORY_CHOICES = (
+    CATEGORIES = [
         ("follow", "Follow"),
         ("comment", "Comment"),
+    ]
+    recipient = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="sent_notifications"
     )
-
-    recipient = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="notifications")
-    sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="sent_notifications")
-    text = models.CharField(max_length=255)
+    sender = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='received_notifications')
     created_at = models.DateTimeField(auto_now_add=True)
+    category = models.CharField(choices=CATEGORIES, max_length=50)
+    object_id = models.IntegerField(null=True)
     read = models.BooleanField(default=False)
-    category = models.CharField(max_length=40, choices=CATEGORY_CHOICES, default='')
-    object_id = models.PositiveIntegerField(null=True)
+    text = models.CharField(max_length=255)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ["-created_at"]
 
     def __str__(self):
-        return f"{self.sender.username} -> {self.recipient.username}"
+        return (
+            f"{self.id} {self.get_category_display()} "
+            f"notification for {self.recipient}"
+        )
     
