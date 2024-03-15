@@ -7,7 +7,7 @@ from .models import Notifications
 
 def create_notification(**kwargs):
     Notification.objects.create(
-        recipient=kwargs["owner"],
+        recipient=kwargs["recipient"],
         sender=kwargs["sender"],
         category=kwargs["category"],
         text=kwargs["content"],
