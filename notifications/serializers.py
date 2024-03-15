@@ -9,6 +9,7 @@ class NotificationsSerializer(serializers.ModelSerializer):
     sender = serializers.ReadOnlyField(source="sender.username")
     profile_image = serializers.ReadOnlyField(source="sender.profile.image.url")
     created_at = serializers.SerializerMethodField()
+    object_id = serializers.ReadOnlyField()
 
     def get_created_at(self, obj):
         if obj.created_at > timezone.now() - timedelta(days=1):
@@ -18,4 +19,4 @@ class NotificationsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Notifications
-        fields = ['id', 'recipient', 'sender', 'text', 'created_at', 'read', 'category', 'profile_image']
+        fields = ['id', 'recipient', 'sender', 'text', 'created_at', 'read', 'category', 'profile_image', 'object_id',]
