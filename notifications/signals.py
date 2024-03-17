@@ -1,5 +1,6 @@
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 from comments.models import Comment
 from followers.models import Follower
 from .models import Notifications
@@ -22,7 +23,7 @@ def create_follow_notification(sender, instance, created, **kwargs):
             "sender": instance.owner,
             "category": "follow",
             "object_id": instance.id,
-            "text": f"{instance.recipient.username} started following you.",
+            "text": f"{instance.sender.username} started following you.",
         }
 
         create_notification(**data)
@@ -35,7 +36,7 @@ def create_comment_notification(sender, instance, created, **kwargs):
             "sender": instance.owner,
             "category": "comment",
             "object_id": instance.post.id,
-            "text": f"{instance.recipient.username} commented on your post "
+            "text": f"{instance.sender.username} commented on your post "
             f"{instance.post.title}",
         }
 
