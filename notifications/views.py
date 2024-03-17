@@ -16,10 +16,10 @@ class NotificationsList(generics.ListAPIView):
     
 
     def get_queryset(self):
-        return Notifications.objects.filter(recipient=self.request.user)
+        return Notifications.objects.filter(owner=self.request.user)
 
     def perform_create(self, serializer):
-        serializer.save(recipient=self.request.user)
+        serializer.save(owner=self.request.user)
 
 
 class NotificationsDetail(generics.RetrieveUpdateDestroyAPIView):

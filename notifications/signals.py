@@ -8,7 +8,7 @@ from .models import Notifications
 
 def create_notification(**kwargs):
     Notification.objects.create(
-        recipient=kwargs["recipient"],
+        owner=kwargs["owner"],
         sender=kwargs["sender"],
         category=kwargs["category"],
         object_id=kwargs["object_id"],
@@ -19,11 +19,11 @@ def create_notification(**kwargs):
 def create_follow_notification(sender, instance, created, **kwargs):
     if created:
         data = {
-            "recipient": instance.followed,
+            "owner": instance.followed,
             "sender": instance.owner,
             "category": "follow",
             "object_id": instance.id,
-            "text": f"{instance.sender.username} started following you.",
+            "text": f"{instance.owner.username} started following you.",
         }
 
         create_notification(**data)
@@ -32,11 +32,11 @@ def create_follow_notification(sender, instance, created, **kwargs):
 def create_comment_notification(sender, instance, created, **kwargs):
     if created:
         data = {
-            "recipient": instance.post.owner,
+            "owner": instance.post.owner,
             "sender": instance.owner,
             "category": "comment",
             "object_id": instance.post.id,
-            "text": f"{instance.sender.username} commented on your post "
+            "text": f"{instance.owner.username} commented on your post "
             f"{instance.post.title}",
         }
 

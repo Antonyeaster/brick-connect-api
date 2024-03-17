@@ -7,7 +7,7 @@ from datetime import timedelta
 
 class NotificationsSerializer(serializers.ModelSerializer):
 
-    recipient = serializers.ReadOnlyField(source="recipient.username")
+    owner = serializers.ReadOnlyField(source="owner.username")
     sender = serializers.ReadOnlyField(source="sender.username")
     profile_image = serializers.ReadOnlyField(
         source="sender.profile.image.url"
@@ -25,7 +25,7 @@ class NotificationsSerializer(serializers.ModelSerializer):
         model = Notifications
         fields = [
             "id",
-            "recipient",
+            "owner",
             "sender",
             "profile_image",
             "created_at",

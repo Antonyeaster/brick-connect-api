@@ -8,7 +8,7 @@ class Notifications(models.Model):
         ("follow", "Follow"),
         ("comment", "Comment"),
     ]
-    recipient = models.ForeignKey(
+    owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="sent_notifications"
     )
     sender = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='received_notifications')
@@ -24,6 +24,6 @@ class Notifications(models.Model):
     def __str__(self):
         return (
             f"{self.id} {self.get_category_display()} "
-            f"notification for {self.recipient}"
+            f"notification for {self.owner}"
         )
     
