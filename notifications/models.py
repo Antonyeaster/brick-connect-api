@@ -9,9 +9,9 @@ class Notifications(models.Model):
         ("comment", "Comment"),
     ]
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="sent_notifications"
+        User, on_delete=models.CASCADE, related_name="received_notifications"
     )
-    sender = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='received_notifications')
+    sender = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='sent_notifications')
     created_at = models.DateTimeField(auto_now_add=True)
     category = models.CharField(choices=CATEGORIES, max_length=50)
     object_id = models.IntegerField(null=True)
