@@ -36,7 +36,7 @@ def create_comment_notification(sender, instance, created, **kwargs):
             "sender": instance.owner,
             "category": "comment",
             "object_id": instance.post.id,
-            "text": f"{instance.owner.username} commented on your post -"
+            "text": f"{instance.owner.username} commented on your post - "
             f"{instance.post.title}",
         }
 
