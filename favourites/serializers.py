@@ -12,10 +12,10 @@ class FavouriteSerializer(serializers.ModelSerializer):
             'id', 'owner', 'created_at', 'post',
         ]
 
-        def create(self, validated_data):
-            try:
-                return super().create(validated_data)
-            except IntegrityError:
-                raise serializers.ValidationError({
-                    'detail': 'Possible duplication'
-                })
+    def create(self, validated_data):
+        try:
+            return super().create(validated_data)
+        except IntegrityError:
+            raise serializers.ValidationError({
+                'detail': 'Possible duplication'
+            })
