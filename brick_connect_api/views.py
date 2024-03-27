@@ -11,7 +11,7 @@ def root_route(request):
     return Response({
         "message": "Welcome to my brick connect API!"
     })
-    
+
 
 # dj-rest-auth logout view fix (Supplied by Code Institute)
 @api_view(['POST'])

@@ -15,6 +15,7 @@ def create_notification(**kwargs):
         text=kwargs["text"],
     )
 
+
 @receiver(post_save, sender=Follower)
 def create_follow_notification(sender, instance, created, **kwargs):
     if created:
@@ -27,6 +28,7 @@ def create_follow_notification(sender, instance, created, **kwargs):
         }
 
         create_notification(**data)
+
 
 @receiver(post_save, sender=Comment)
 def create_comment_notification(sender, instance, created, **kwargs):

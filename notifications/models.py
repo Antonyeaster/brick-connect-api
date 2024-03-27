@@ -26,4 +26,3 @@ class Notifications(models.Model):
             f"{self.id} {self.get_category_display()} "
             f"notification for {self.owner}"
         )
-    

@@ -15,7 +15,8 @@ class CategoriesView(generics.ListCreateAPIView):
     def post(self, request):
         data = self.request.data
         category = data['category']
-        queryset = Post.objects.order_by('-created_at').filter(category__iexact=category)
+        queryset = Post.objects.order_by(
+            '-created_at').filter(category__iexact=category)
 
         serializer = PostSerializer(queryset, many=True)
 
@@ -54,7 +55,7 @@ class PostList(generics.ListCreateAPIView):
         'title',
         'category',
     ]
-    
+
     ordering_fields = [
         'comments_count',
         'likes_count',
@@ -64,6 +65,7 @@ class PostList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
@@ -75,4 +77,3 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
         comments_count=Count('comment', distinct=True),
         likes_count=Count('likes', distinct=True)
     ).order_by('-created_at')
-        

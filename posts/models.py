@@ -7,6 +7,7 @@ class Categories(models.TextChoices):
     FULL_SET_BUILDS = 'full set builds'
     DIY_BUILDS = 'diy builds'
 
+
 class Post(models.Model):
     """
     Post model is related to the 'owner', owner is a user instance.
@@ -42,6 +43,6 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-    
+
     def __str__(self):
         return f'{self.id} {self.title}'

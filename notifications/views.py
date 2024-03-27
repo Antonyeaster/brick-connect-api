@@ -6,14 +6,13 @@ from brick_connect_api.permissions import IsNotificationsrecipient
 
 
 class NotificationsList(generics.ListAPIView):
-    
+
     serializer_class = NotificationsSerializer
 
     permission_classes = [permissions.IsAuthenticated]
 
     filter_backends = [filters.OrderingFilter]
     ordering_fields = ["created_at", "read"]
-    
 
     def get_queryset(self):
         return Notifications.objects.filter(owner=self.request.user)
@@ -26,4 +25,5 @@ class NotificationsDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Notifications.objects.all()
     serializer_class = NotificationsSerializer
-    permission_classes = [permissions.IsAuthenticated, IsNotificationsrecipient]
+    permission_classes = [
+            permissions.IsAuthenticated, IsNotificationsrecipient]
