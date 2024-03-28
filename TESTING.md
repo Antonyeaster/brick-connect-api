@@ -290,7 +290,7 @@ Authenticated and unauthenticated users can view the favourites details if they 
 
 ![favourites/ detail-edit](documentation/images/favourites-detail-signed-in.png)
 
-a authenticated user can delete a favourite if the own it.
+A authenticated user can delete a favourite if the own it.
 
 ![favourites/ delete modal](documentation/images/favourite-detail-delete-modal.png)
 
