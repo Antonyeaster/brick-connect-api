@@ -38,6 +38,7 @@ The API has been set up to only allow unauthenticated users to browse the site a
   * [Categories Endpoints](#categories-endpoints)
     + [category/](#category)
   * [Validation](#validation)
+  * [Known Bugs](#known-bugs)
 
 ### Likes Endpoints
 
@@ -316,5 +317,9 @@ All files have been pass through the [Code Institute PEP8 Validation Tool](https
 I only have line too long on my post model, both of these lines have been shortend once and are still to long so I've decided to leave them as they are.
 
 ![Posts pep8](documentation/images/post-pep8.png)
+
+## Known Bugs
+
+* The CSS related to the deployed version of the admin panel does not process. The admin panel still works, but it's harder to navigate. This happened after a debugging session with the tutors, and they were under the impression it would return. As of submission day, it hasn't returned. The admin panel has all its styling in production, which is why this leads me to believe it's to do with Heroku.
 
 Back to [README](/README.md)
