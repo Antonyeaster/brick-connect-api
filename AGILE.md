@@ -11,6 +11,7 @@
     * [Sprint 6](#sprint-6)
     * [Sprint 7](#sprint-7)
   * [Milestones](#milestones)
+  * [Project Board](#project-board)
   * [Labels](#labels)
   * [Learning Outcomes](#learning-outcomes)
 
