@@ -37,6 +37,7 @@ The API has been set up to only allow unauthenticated users to browse the site a
     + [favourites/id/](#favourites-id)
   * [Categories Endpoints](#categories-endpoints)
     + [category/](#category)
+  * [Validation](#validation)
 
 ### Likes Endpoints
 
@@ -307,5 +308,13 @@ If an invalid id is entered in the URL a 404 not found error will display.
 The category endpoint is a relation to the post which is why it's the same. When authenticated users create a post they have to select a category in which to place their post.
 
 ![category/ endpoint](documentation/images/category-endpoint.png)
+
+## Validation
+
+All files have been pass through the [Code Institute PEP8 Validation Tool](https://pep8ci.herokuapp.com/) with no major errors. Just cleaning up indentation and empty lines.
+
+I only have line too long on my post model, both of these lines have been shortend once and are still to long so I've decided to leave them as they are.
+
+![Posts pep8](documentation/images/post-pep8.png)
 
 Back to [README](/README.md)
