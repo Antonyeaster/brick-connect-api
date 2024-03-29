@@ -268,6 +268,8 @@ The testing process, along with bugs, can be viewed [here](TESTING.md)​
 
 ## **Deployment**
 
+I have detailed the deployment in a separate file. It can be found [here](DEPLOYMENT.md)
+
 <hr>
 
 ## **Technologies Used**
