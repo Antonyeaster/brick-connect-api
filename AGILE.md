@@ -13,7 +13,6 @@
   * [Milestones](#milestones)
   * [Project Board](#project-board)
   * [Labels](#labels)
-  * [Learning Outcomes](#learning-outcomes)
 
 <hr>
 
