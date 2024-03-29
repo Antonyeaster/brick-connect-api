@@ -4,6 +4,9 @@ from .models import Favourite
 
 
 class FavouriteSerializer(serializers.ModelSerializer):
+    """
+    Favourite Model serializer.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
@@ -13,6 +16,9 @@ class FavouriteSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
+        """
+        Handles possible duplication
+        """
         try:
             return super().create(validated_data)
         except IntegrityError:

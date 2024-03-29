@@ -5,6 +5,9 @@ from django.contrib.humanize.templatetags.humanize import naturaltime
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Comment Model
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -15,16 +18,30 @@ class CommentSerializer(serializers.ModelSerializer):
     updated_at = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
+        """
+        Returns true if the current user is the owner
+        of the comment
+        """
         request = self.context['request']
         return request.user == obj.owner
 
     def get_created_at(self, obj):
+        """
+        Display time since comment created.
+        """
         return naturaltime(obj.created_at)
 
     def get_updated_at(self, obj):
+        """
+        Display time elapsed since comment created.
+        """
         return naturaltime(obj.updated_at)
 
     def get_commentlike_id(self, obj):
+        """
+        Returns the ID of the authenticated user's
+        like on the comment.
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             commentlike = CommentLike.objects.filter(
@@ -43,4 +60,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class CommentDetailSerializer(CommentSerializer):
+    """
+    Serializer for Comment detail view.
+    """
     post = serializers.ReadOnlyField(source='post.id')

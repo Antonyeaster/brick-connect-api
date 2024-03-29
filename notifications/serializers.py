@@ -6,7 +6,10 @@ from datetime import timedelta
 
 
 class NotificationsSerializer(serializers.ModelSerializer):
-
+    """
+    Serializer for notification model, displays created at
+    In a more readable format.
+    """
     owner = serializers.ReadOnlyField(source="owner.username")
     sender = serializers.ReadOnlyField(source="sender.username")
     profile_image = serializers.ReadOnlyField(

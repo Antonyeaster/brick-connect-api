@@ -8,6 +8,9 @@ from rest_framework.response import Response
 
 
 class CategoriesView(generics.ListCreateAPIView):
+    """
+    List and create posts filtered by a category
+    """
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.all()
@@ -42,11 +45,16 @@ class PostList(generics.ListCreateAPIView):
     ]
 
     filterset_fields = [
+        # User feed shows posts from Users being followed
         'owner__followed__owner__profile',
+        # Get posts liked by current User
         'likes__owner__profile',
+        # Get posts owned by specific User
         'owner__profile',
+        # Get posts favourited by current User
         'favourites__owner__profile',
         'favourites',
+        # Filter posts based on their category
         'category',
     ]
 
@@ -64,6 +72,10 @@ class PostList(generics.ListCreateAPIView):
     ]
 
     def perform_create(self, serializer):
+        """
+        If user is signed in, this saves the
+        new post to database.
+        """
         serializer.save(owner=self.request.user)
 
 

@@ -6,9 +6,13 @@ from brick_connect_api.permissions import IsNotificationsrecipient
 
 
 class NotificationsList(generics.ListAPIView):
-
+    """
+    Lists the notification for the authenticated user
+    that owns the profile related to the notifications.
+    Notification creates automatically, this is why the
+    create view is missing
+    """
     serializer_class = NotificationsSerializer
-
     permission_classes = [permissions.IsAuthenticated]
 
     filter_backends = [filters.OrderingFilter]
@@ -22,7 +26,10 @@ class NotificationsList(generics.ListAPIView):
 
 
 class NotificationsDetail(generics.RetrieveUpdateDestroyAPIView):
-
+    """
+    Retrieve or delete the notification, user must the the
+    authenticated owner
+    """
     queryset = Notifications.objects.all()
     serializer_class = NotificationsSerializer
     permission_classes = [

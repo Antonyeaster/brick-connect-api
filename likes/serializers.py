@@ -4,6 +4,9 @@ from .models import Like
 
 
 class LikeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Like model
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
@@ -13,6 +16,9 @@ class LikeSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
+        """
+        Handles possible duplication
+        """
         try:
             return super().create(validated_data)
         except IntegrityError:

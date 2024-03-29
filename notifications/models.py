@@ -3,7 +3,10 @@ from django.contrib.auth.models import User
 
     
 class Notifications(models.Model):
-
+    """
+    Notifications model sending a notification automatically
+    to a user when a follow is created or a post is commented on.
+    """
     CATEGORIES = [
         ("follow", "Follow"),
         ("comment", "Comment"),

@@ -5,6 +5,9 @@ from favourites.models import Favourite
 
 
 class PostSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Post model
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -15,6 +18,9 @@ class PostSerializer(serializers.ModelSerializer):
     likes_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
+        """
+        Restricts the size of the images.
+        """
         if value.size > 1024 * 1024 * 5:
             raise serializers.ValidationError(
                 'Image size is larger than 5MB'
@@ -30,10 +36,18 @@ class PostSerializer(serializers.ModelSerializer):
         return value
 
     def get_is_owner(self, obj):
+        """
+        Returns true if the current user is the owner
+        of the post
+        """
         request = self.context['request']
         return request.user == obj.owner
 
     def get_like_id(self, obj):
+        """
+        Returns the ID of the authenticated user's
+        like on a post.
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             like = Like.objects.filter(
@@ -43,6 +57,10 @@ class PostSerializer(serializers.ModelSerializer):
         return None
 
     def get_favourite_id(self, obj):
+        """
+        Returns the ID of the authenticated user's
+        favourite on a post.
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             favourite = Favourite.objects.filter(

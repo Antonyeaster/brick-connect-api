@@ -4,6 +4,10 @@ from django.db.models.signals import post_save
 
 
 class Profile(models.Model):
+    """
+    Profile model related to user, supplys a default
+    profile image
+    """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -21,6 +25,9 @@ class Profile(models.Model):
 
 
 def create_profile(sender, instance, created, **kwargs):
+    """
+    Creates a new user profile using signals.
+    """
     if created:
         Profile.objects.create(owner=instance)
 

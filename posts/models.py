@@ -3,7 +3,9 @@ from django.db import models
 
 
 class Categories(models.TextChoices):
-    """Categories available to the user when posting"""
+    """
+    Categories available to the user when posting
+    """
     FULL_SET_BUILDS = 'full set builds'
     DIY_BUILDS = 'diy builds'
 
@@ -42,6 +44,9 @@ class Post(models.Model):
         max_length=32, choices=image_filter_choices, default='normal')
 
     class Meta:
+        """
+        For displaying newest posts first.
+        """
         ordering = ['-created_at']
 
     def __str__(self):

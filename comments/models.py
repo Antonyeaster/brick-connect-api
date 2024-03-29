@@ -6,7 +6,7 @@ from posts.models import Post
 class Comment(models.Model):
     """
     Comment model relates to the User and Post model
-    to retrieve the owner of account and post they have made
+    to retrieve the owner of account and post they have made.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

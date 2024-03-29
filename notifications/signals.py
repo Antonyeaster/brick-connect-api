@@ -18,6 +18,9 @@ def create_notification(**kwargs):
 
 @receiver(post_save, sender=Follower)
 def create_follow_notification(sender, instance, created, **kwargs):
+    """
+    Sends notification if a user follows another user
+    """
     if created:
         data = {
             "owner": instance.followed,
@@ -32,6 +35,9 @@ def create_follow_notification(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=Comment)
 def create_comment_notification(sender, instance, created, **kwargs):
+    """
+    Sends notification if a user comments on another user's post
+    """
     if created:
         data = {
             "owner": instance.post.owner,
