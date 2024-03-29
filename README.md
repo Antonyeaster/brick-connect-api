@@ -10,11 +10,15 @@ The creation of Brick Connect API arose from a genuine aspiration to unite the L
 
 ![Root Route](documentation/images/root-route-page.png)
 
+<hr>
+
 View the Deployed API [here](https://brick-connect-api-e6b45c41a17a.herokuapp.com/)
 
 View the repository for the frontend [here](https://github.com/Antonyeaster/brick-connect-react)
 
+View the deployed front end [here](https://brick-connect-react-c56aa699ed51.herokuapp.com/)
 
+<hr>
 
 ## Table of contents:
 1. [**Site Overview**](#site-overview)
