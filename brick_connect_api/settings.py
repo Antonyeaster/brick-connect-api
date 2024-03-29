@@ -65,7 +65,6 @@ DEBUG = False
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
    '8000-antonyeaste-brickconnec-ks640087d6p.ws-eu110.gitpod.io',
-   'brick-connect-react-c56aa699ed51.herokuapp.com',
 ]
 
 
