@@ -10,6 +10,10 @@ The creation of Brick Connect API arose from a genuine aspiration to unite the L
 
 ![Root Route](documentation/images/root-route-page.png)
 
+View the Deployed API [here](https://brick-connect-api-e6b45c41a17a.herokuapp.com/)
+
+View the repository for the frontend [here](https://github.com/Antonyeaster/brick-connect-react)
+
 
 
 ## Table of contents:
@@ -20,6 +24,7 @@ The creation of Brick Connect API arose from a genuine aspiration to unite the L
       * [***User Stories***](#user-stories)
     * [***Wireframes***](#wireframes)
     * [***Database Schema***](#database-schema)
+      * [***Models***](#models)
 1. [**Agile Development**](#agile-development)
 1. [**Features**](#features)
     * [***Admin Page***](#admin-page)
@@ -94,6 +99,40 @@ Wireframes are not required for the API part of this project. Wireframes can be 
 I used [dbdiagram](https://dbdiagram.io/home) to help build my database tables. The image below shows the diagram.
 
 ![dbdiagram](documentation/images/relationship-diagram.png)
+
+#### **Models**
+
+##### Post
+
+The Post model is related to the user model. When a user makes a post, the post will be linked to their profile. The post model keeps track on the title of the post, the description, when the post was created, when it was updated, the post image and the category the user selects.
+
+##### Comment
+
+The comment model is related to the user model, which is the owner of the comment. It also relates to the post model, as to which post has been commented on. Handling the comment content and the created at and updated at fields.
+
+##### Follower
+
+The follower model keeps track of the follower-following relationship between users. It also relates to the user modal, once as the owner of the follow and the other as the followed user. This tracks the time at which the follow happens.
+
+##### Likes 
+
+The likes model is related to the user and post models. It also keeps track on when the like was created.
+
+##### CommentLike 
+
+The comment like is related to the user model and the comment model. It also keeps track on when a comment has been liked with the created at field.
+
+##### Profile
+
+The profile model relates directly to the user model. When a user creates a profile, the profile model will gather, when the profile was created, when the profile is updated, the name of the profile, the image related to the profile and a bio.
+
+##### Notifications
+
+The notifications model is related to the user model and works along side signals. When a certain part of the site is triggered, i.e., a comment has been made or a follow has happened, the profile of which the post belongs to or the account that was followed will receive an automatic notification to let them know what is going on. This notification will inform them of the user who has followed them or the user who has commented on their post.
+
+##### Favourite
+
+The favourite model links to the user and post models. This gives the user the ability to favourite a post. When a favourite happens, the created at time is stored.
 
 <hr>
 
