@@ -120,43 +120,43 @@ For this project I completed seven Milestones. They were all vital to the develo
 
 ### Sprint 1 - Basic set up
 
-![Sprint 1](documentation/readme-images/sprint-1.png)
+![Sprint 1](documentation/images/sprint-1.png)
 
 <hr>
 
 ### Sprint 2 Authentication and Post functionality
 
-![Sprint 2](documentation/readme-images/sprint-2.png)
+![Sprint 2](documentation/images/sprint-2.png)
 
 <hr>
 
 ### Sprint 3 Comments, Followers, Profile Page, Favourites
 
-![Sprint 3](documentation/readme-images/sprint-3.png)
+![Sprint 3](documentation/images/sprint-3.png)
 
 <hr>
 
 ### Sprint 4 Categories, like Comment, Popular posts, Defensive design
 
-![Sprint 4](documentation/readme-images/sprint-4.png)
+![Sprint 4](documentation/images/sprint-4.png)
 
 <hr>
 
 ### Sprint 5 Notifications, message pop ups
 
-![Sprint 5](documentation/readme-images/sprint-5.png)
+![Sprint 5](documentation/images/sprint-5.png)
 
 <hr>
 
 ### Sprint 6 Styling - Notifications
 
-![Sprint 6](documentation/readme-images/sprint-6.png)
+![Sprint 6](documentation/images/sprint-6.png)
 
 <hr>
 
 ### Sprint 7 Developer Testing and Documentation
 
-![Sprint 7](documentation/readme-images/sprint-7.png)
+![Sprint 7](documentation/images/sprint-7.png)
 
 <hr>
 
@@ -170,25 +170,25 @@ I separated my issues into multiple labels but the most important ones are docum
 
 ### Must Have
 
-![must have 1](documentation/readme-images/must-have.png)
-![must have 2](documentation/readme-images/must-have-2.png)
+![must have 1](documentation/images/must-have.png)
+![must have 2](documentation/images/must-have-2.png)
 
 <hr>
 
 ### Could Have
 
-![could have](documentation/readme-images/could-have.png)
+![could have](documentation/images/could-have.png)
 
 <hr>
 
 ### Should Have
 
-![should have](documentation/readme-images/should-have.png)
+![should have](documentation/images/should-have.png)
 
 <hr>
 
 ### Won't Have
 
-![won't have](documentation/readme-images/wont-have.png)
+![won't have](documentation/images/wont-have.png)
 
 Back to [README](README.md)
