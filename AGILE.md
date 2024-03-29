@@ -159,6 +159,10 @@ For this project I completed seven Milestones. They were all vital to the develo
 
 <hr>
 
+## Project Board
+
+You can view my Project board [here](https://github.com/users/Antonyeaster/projects/8)
+
 ## Labels
 
 I separated my issues into multiple labels but the most important ones are documented below:
