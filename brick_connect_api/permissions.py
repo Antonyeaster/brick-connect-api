@@ -4,6 +4,9 @@ from rest_framework.exceptions import PermissionDenied
 
 class IsNotificationsrecipient(permissions.BasePermission):
 
+    """Custom permission to make sure only
+    the owner of the notification can see them"""
+
     def has_object_permission(self, request, view, obj):
         if obj.owner == request.user:
             return True
