@@ -320,8 +320,10 @@ I only have line too long on my post model, both of these lines have been shorte
 
 ## Known Bugs
 
-* The CSS related to the deployed version of the admin panel does not process. The admin panel still works, but it's harder to navigate. This happened after a debugging session with the tutors, and they were under the impression it would return. As of submission day, it hasn't returned. The admin panel has all its styling in production, which is why this leads me to believe it's to do with Heroku.
+* Django Admin Panel - The CSS related to the deployed version of the admin panel does not process. The admin panel still works, but it's harder to navigate. This happened after a debugging session with the tutors, and they were under the impression it would return. As of submission day, it hasn't returned. The admin panel has all its styling in production, which is why this leads me to believe it's to do with Heroku.
 
 ![Bugged Admin Panel](documentation/images/bugged-admin.png)
+
+* Heroku Allowed Hosts - I attempted to follow the instructions set in the walk through projects to remove the hard coded front end link from the ALLOWED_HOSTS section in seetings.py. However, this only led to failing Heroku deployments and 'Bad Request' pages after deployment. Due to the nature of the course and the deadline, I have decided to leave it as it is and document the problem.
 
 Back to [README](/README.md)

@@ -62,6 +62,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# Due to problems with Heroku, I left left the Frontend URL hard coded.
+# I have documented this in the known bugs section of the TESTING.md
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
    '8000-antonyeaste-brickconnec-ks640087d6p.ws-eu110.gitpod.io',
