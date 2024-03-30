@@ -52,7 +52,6 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'brick_connect_api.serializers.CurrentUserSerializer'
 }
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -69,7 +68,6 @@ ALLOWED_HOSTS = [
    '8000-antonyeaste-brickconnec-ks640087d6p.ws-eu110.gitpod.io',
    'brick-connect-react-c56aa699ed51.herokuapp.com',
 ]
-
 
 # Application definition
 
@@ -92,7 +90,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'corsheaders',
-
     'profiles',
     'posts',
     'comments',
