@@ -59,12 +59,14 @@ View the deployed front end [here](https://brick-connect-react-c56aa699ed51.hero
 * Provide the back-end component to a front-end site developed with React.js.
 * To assist the user in registering, logging in and logging out on the front-end.
 * To provide front-end users with CRUD (create, read, update and delete) functionality for posts found on the site.
-* To allow users on the front-end to create, edit and delete their own comments and delete their own.
+* To allow users on the front-end to create, edit and delete their own comments and create and delete their own comment like.
+* To allow users to trigger notification though following and commenting. Enabling the other user to receive the notification. 
 * To give users the ability to follow and unfollow fellow users of the site.
 * To allow for greater community interaction by giving users the opportunity to like or remove the like from posts.
 * Provide filtered content for the front-end user based on whether they follow a user or have liked or favourited a particular post.
 * Enhance the user experience integrated search function for those trying to find a specific user or post.
-* Offer users the opportunity to provide more information about themselves by adding to their user profile. 
+* Offer users the opportunity to provide more information about themselves by adding to their user profile.
+* Provide users with a choice of category to display their posts or to filter by. 
 
 <hr>
 
@@ -145,8 +147,6 @@ The favourite model links to the user and post models. This gives the user the a
 I used Github projects to create and track issues and User Stories. The Agile processes and methodologies can be viewed [here](/AGILE.md)
 
 <hr>
-
-<br>
 
 # **Features**
 
@@ -272,7 +272,7 @@ Permission are set across the site, with the intention to keep users out of area
 
 ### User Authentication
 
-User authentication is present on the front-end and Users are unable to access any site content unless they are logged in.
+User authentication is present on the front-end and Users are unable to access any authenticated areas of site content unless they are signed in.
 
 <hr>
 
