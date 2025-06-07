@@ -127,6 +127,16 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CORS_ALLOW_CREDENTIALS = True
 
+
+CORS_ALLOWED_ORIGINS = [
+    "https://3000-antonyeaste-brickconnec-dhykzdkg5ju.ws-eu120.gitpod.io",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-antonyeaste-brickconnec-ks640087d6p.ws-eu120.gitpod.io",
+    "https://3000-antonyeaste-brickconnec-dhykzdkg5ju.ws-eu120.gitpod.io",
+]
+
 ROOT_URLCONF = 'brick_connect_api.urls'
 
 TEMPLATES = [
